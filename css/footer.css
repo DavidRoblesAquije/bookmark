@@ -1,0 +1,492 @@
+@import url("font.css");
+* p,
+* h1,
+* h2,
+* h3,
+* h4 {
+  margin: 0;
+}
+
+* p {
+  color: #9194a1;
+  line-height: 28px;
+}
+
+* ul,
+* li {
+  list-style-type: none;
+  margin: 0;
+}
+
+.helpinfo {
+  display: none;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-family: "rubik-regular";
+  font-size: 18px;
+}
+
+.container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  max-width: 1320px;
+  margin: auto auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 375px;
+    padding: 0 15px;
+  }
+}
+
+.d-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/**************header**************/
+.headerContent {
+  position: relative;
+  height: 100vh;
+  -ms-grid-columns: 45% 55%;
+      grid-template-columns: 45% 55%;
+}
+
+.headerContent .hctext h1 {
+  color: #252b46;
+  font-size: 50px;
+}
+
+.headerContent .hctext p {
+  margin: 30px 0;
+}
+
+.headerContent .hctext .buttons button {
+  border: none;
+  width: 165px;
+  padding: 15px 0;
+  border-radius: 5px;
+  background: #5368df;
+  color: #ffffff;
+  font-family: "rubik-medium";
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.headerContent .hcimg {
+  position: relative;
+}
+
+.headerContent .hcimg .decoration {
+  position: absolute;
+  width: 55%;
+  height: 320px;
+  background: #5368df;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.headerContent .hcimg .decoration::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 100%;
+  background: #5368df;
+  left: -150px;
+  border-radius: 50%;
+}
+
+/**************features**************/
+#features {
+  position: relative;
+  overflow: hidden;
+}
+
+#features .fctitle {
+  text-align: center;
+}
+
+#features .fctitle h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/**************extensions**************/
+#extensions {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 200px;
+}
+
+#extensions .ectittle {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#extensions .ectittle h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+#extensions .ecCards {
+  -ms-grid-columns: 33.3% 33.3% 33.3%;
+      grid-template-columns: 33.3% 33.3% 33.3%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 991px;
+  margin: auto;
+}
+
+#extensions .ecCards .card {
+  position: relative;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 14px -8px #5368df;
+          box-shadow: 0px 5px 14px -8px #5368df;
+  margin: 30px 20px;
+  padding: 30px;
+}
+
+#extensions .ecCards .card.card2 {
+  top: 45px;
+}
+
+#extensions .ecCards .card.card3 {
+  top: 90px;
+}
+
+#extensions .ecCards .card h3 {
+  margin-top: 30px;
+}
+
+#extensions .ecCards .card p {
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+#extensions .ecCards .card .lines {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 100px;
+}
+
+#extensions .ecCards .card button {
+  border: none;
+  width: 165px;
+  padding: 15px 0;
+  border-radius: 5px;
+  background: #5368df;
+  color: #ffffff;
+  font-family: "rubik-medium";
+  cursor: pointer;
+  width: 100%;
+}
+
+/**************questions**************/
+#questions {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 150px;
+}
+
+#questions .qctittle {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#questions .qctittle h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+#questions .qcquestions {
+  width: 545px;
+  margin: auto;
+}
+
+#questions .qcquestions .accordion_card {
+  position: relative;
+  margin: 5px 0;
+  border-bottom: 1px solid #9194a1;
+}
+
+#questions .qcquestions .accordion_card:first-child {
+  border-top: 1px solid #9194a1;
+}
+
+#questions .qcquestions .accordion_card .card_title {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+#questions .qcquestions .accordion_card .card_title::before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  border: solid #5368df;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 2px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#questions .qcquestions .accordion_card .card_title:hover h4 {
+  color: #5368df;
+}
+
+#questions .qcquestions .accordion_card .card_title h4 {
+  font-family: "rubik-light";
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#questions .qcquestions .accordion_card .card_body {
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#questions .qcquestions .activado .card_title::before {
+  -webkit-transform: translateY(-50%) rotate(225deg);
+          transform: translateY(-50%) rotate(225deg);
+}
+
+#questions .qcquestions .activado .card_title h4 {
+  color: #5368df;
+}
+
+#questions .qcquestions .activado .card_body {
+  height: 195px;
+}
+
+#questions .qcquestions .btninfo {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#questions .qcquestions .btninfo button {
+  border: none;
+  width: 165px;
+  padding: 15px 0;
+  border-radius: 5px;
+  background: #5368df;
+  color: #ffffff;
+  font-family: "rubik-medium";
+  cursor: pointer;
+  width: 100px;
+}
+
+#contact {
+  background: #5368df;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 80px 0;
+}
+
+#contact span {
+  font-family: "rubik-light";
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+#contact h4 {
+  font-size: 30px;
+  margin: 45px 0;
+}
+
+#contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#contact form .wrapper {
+  width: 100%;
+  background: #ffffff;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+#contact form .wrapper .input-data {
+  position: relative;
+}
+
+#contact form .wrapper .input-data input {
+  border: none;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  outline: none;
+  color: #9194a1;
+}
+
+#contact form .wrapper .input-data input:focus ~ label,
+#contact form .wrapper .input-data input:valid ~ label {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  font-size: 14px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fa5757;
+}
+
+#contact form .wrapper .input-data label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  color: #9194a1;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#contact form button {
+  border: none;
+  width: 165px;
+  padding: 15px 0;
+  border-radius: 5px;
+  background: #5368df;
+  color: #ffffff;
+  font-family: "rubik-medium";
+  cursor: pointer;
+  background: #fa5757;
+  margin-left: 15px;
+}
+
+footer {
+  background: #252b46;
+}
+
+footer .footerContent {
+  padding: 30px 0;
+}
+
+footer .footerContent .footnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footerContent .footnav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footerContent .footnav ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+footer .footerContent .footnav ul li {
+  margin-left: 15px;
+}
+
+footer .footerContent .footnav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "rubik-light";
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+footer .footerContent .redes {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+footer .footerContent .redes ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+footer .footerContent .redes ul li {
+  margin-left: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=footer.css.map */

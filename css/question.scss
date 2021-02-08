@@ -1,0 +1,142 @@
+#questions {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 150px;
+
+    .qctittle {
+        text-align: center;
+        margin-bottom: 60px;
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+
+            @media screen and (max-width: 767px) {
+                font-size: 25px;
+            }
+        }
+
+        p {
+            br {
+                @media screen and (max-width: 575px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .qcquestions {
+        width: 545px;
+        margin: auto;
+
+        @media screen and (max-width: 575px) {
+            width: 100%;
+        }
+
+        .accordion_card {
+            position: relative;
+            margin: 5px 0;
+            border-bottom: 1px solid $grayblue;
+
+            &:first-child {
+                border-top: 1px solid $grayblue;
+            }
+
+            .card_title {
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease-in-out;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                @media screen and (max-width: 400px) {
+                    padding-right: 25px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    width: 3px;
+                    height: 14px;
+                    background: $softblue;
+                    transform: translateY(-50%) rotate(45deg);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 23px;
+                    top: 50%;
+                    width: 3px;
+                    height: 14px;
+                    background: $softblue;
+                    transform: translateY(-50%) rotate(-45deg);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    h4 {
+                        color: $red;
+                    }
+                }
+
+                h4 {
+                    font-family: map-get($font-family, light);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            .card_body {
+                height: 0px;
+                overflow: hidden;
+                transition: all 0.3s ease-in-out;
+
+                @media screen and (max-width: 400px) {
+                    transition: inherit;
+                }
+            }
+        }
+
+        .activado {
+            .card_title {
+                &::before {
+                    background: $red;
+                    transform: translateY(-50%) rotate(135deg);
+                }
+                &::after {
+                    background: $red;
+                    transform: translateY(-50%) rotate(-135deg);
+                }
+            }
+            .card_body {
+                height: 195px;
+
+                @media screen and (max-width: 767px) {
+                    height: 150px;
+                }
+                @media screen and (max-width: 575px) {
+                    height: 240px;
+                }
+                @media screen and (max-width: 400px) {
+                    height: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .btninfo {
+            text-align: center;
+            margin-top: 50px;
+
+            button {
+                @include buttondec();
+                width: 100px;
+            }
+        }
+    }
+}

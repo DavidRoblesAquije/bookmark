@@ -1,0 +1,214 @@
+@mixin hamburger_span {
+    left: 0;
+    width: 30px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: $darkblue;
+    transition: all 0.3s ease-in-out;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 40px 0;
+    z-index: 50;
+    //background: $white;
+
+    .navContent {
+        position: relative;
+
+        @media screen and (max-width: 991px) {
+            grid-template-columns: 25% 75%;
+        }
+
+        .navimg {
+            &.open {
+                svg {
+                    path {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+
+        ul {
+            justify-self: end;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            width: 100%;
+            justify-items: end;
+            align-items: center;
+
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+
+            li {
+                a {
+                    color: $darkblue;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    font-size: 13px;
+
+                    &:hover {
+                        color: $red;
+                    }
+                }
+                button {
+                    @include buttondec();
+                    border-color: $red;
+                    padding: 12px 0;
+                    background: $red;
+                    width: 110px;
+
+                    &:hover {
+                        color: $red;
+                        border-color: $red;
+                    }
+                }
+            }
+        }
+
+        .hamburger {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            justify-content: flex-end;
+            align-items: center;
+
+            @media screen and (max-width: 767px) {
+                display: flex;
+            }
+
+            span {
+                position: relative;
+                @include hamburger_span();
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    @include hamburger_span();
+                }
+
+                &::before {
+                    top: 8px;
+                }
+
+                &::after {
+                    top: -8px;
+                }
+            }
+        }
+
+        //toggle active
+        .hamb_open {
+            span {
+                background: transparent;
+
+                &::before {
+                    top: 0px;
+                    background: $white;
+                    transform: rotate(45deg);
+                }
+
+                &::after {
+                    top: 0px;
+                    background: $white;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.navigation_resp {
+    display: none;
+    position: fixed;
+    z-index: -10;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background: rgba(37, 43, 70, 0.9);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    // open{
+    //     z-index: 45!important;
+    //     opacity: 1!important;
+    // }
+
+    @media screen and (max-width: 767px) {
+        //display: flex;
+        display: block;
+    }
+
+    ul {
+        padding: 0;
+        display: grid;
+        //grid-row-gap: 30px;
+        text-align: center;
+        margin-top: 70px;
+
+        li {
+            border-bottom: 1px solid $white;
+            padding: 25px 0;
+
+            &:nth-child(1) {
+                border-top: 1px solid $white;
+            }
+            &:nth-child(4) {
+                border-bottom: 0px;
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-family: map-get($font-family, light);
+                letter-spacing: 2px;
+            }
+
+            button {
+                @include buttondec();
+                border-color: $white;
+                width: 100%;
+                text-transform: uppercase;
+                background: transparent;
+                font-size: 20px;
+                font-family: map-get($font-family, medium);
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .redes {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 130px;
+
+        img{
+            margin:0 15px;
+        }
+    }
+}
+
+//toggle active
+.open {
+    z-index: 45 !important;
+    opacity: 1 !important;
+}
+
+.noscroll {
+    overflow: hidden;
+}

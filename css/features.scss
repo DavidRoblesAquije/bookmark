@@ -1,0 +1,268 @@
+#features {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 230px;
+
+    @media screen and (max-width: 991px) {
+        padding-bottom: 150px;
+    }
+
+    .decoration {
+        position: absolute;
+        width: 30%;
+        height: 350px;
+        background: $softblue;
+        bottom: 140px;
+        left: 0;
+        z-index: -1;
+
+        @media screen and (max-width: 1199px) {
+            width: 20%;
+            height: 275px;
+            bottom: 220px;
+        }
+
+        @media screen and (max-width: 991px) {
+            bottom: inherit;
+            top: 430px;
+        }
+
+        @media screen and (max-width: 767px) {
+            top: 485px;
+            height: 200px;
+        }
+
+        @media screen and (max-width: 575px) {
+            top: 510px;
+            width: 50%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 100%;
+            background: $softblue;
+            right: -180px;
+            border-radius: 50%;
+
+            @media screen and (max-width: 1199px) {
+                width: 275px;
+                right: -140px;
+            }
+        }
+    }
+
+    .fctitle {
+        text-align: center;
+        padding-bottom: 45px;
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+
+            @media screen and (max-width: 767px) {
+                font-size: 25px;
+            }
+        }
+
+        p {
+            br {
+                @media screen and (max-width: 575px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .fcslide {
+        ul {
+            position: relative;
+            display: grid;
+            grid-template-columns: 33.3% 33.3% 33.3%;
+            text-align: center;
+            padding: 0;
+            width: 700px;
+            margin: auto;
+            border-bottom: 1px solid $grayblue;
+
+            @media screen and (max-width: 767px) {
+                grid-template-columns: inherit;
+                width: 100%;
+                border-bottom: 0px;
+            }
+
+            li {
+                position: relative;
+                padding: 20px;
+                cursor: pointer;
+                color: $grayblue;
+
+                @media screen and (max-width: 767px) {
+                    border-bottom: 1px solid $grayblue;
+
+                    &.feature1 {
+                        border-top: 1px solid $grayblue;
+                    }
+                }
+
+                &:hover {
+                    color: $red;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 4px;
+                    background: $red;
+                    bottom: -1px;
+                    left: 0;
+                    transition: all 0.3s ease;
+
+                    @media screen and (max-width: 767px) {
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                &.activado {
+                    color: $darkblue;
+                }
+
+                &.activado::before {
+                    width: 100%;
+
+                    @media screen and (max-width: 767px) {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        .slides_features {
+            position: relative;
+            margin-top: 80px;
+
+            @media screen and (max-width: 991px) {
+                grid-template-columns: inherit;
+            }
+
+            @media screen and (max-width: 767px) {
+                margin-top: 0;
+            }
+
+            .hcimg {
+                position: relative;
+                height: 350px;
+
+                @media screen and (max-width: 991px) {
+                    width: 400px;
+                    margin: auto;
+                }
+
+                @media screen and (max-width: 767px) {
+                    width: 305px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    width: 255px;
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    opacity: 0;
+                    left: -120px;
+                    transition: all 0.5s ease;
+                    z-index: 0;
+
+                    &.activado {
+                        opacity: 1;
+                        left: 0px;
+                        z-index: 5;
+                    }
+
+                    @media screen and (max-width: 1199px) {
+                        width: 420px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    @media screen and (max-width: 991px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .hctext {
+                position: relative;
+                height: 350px;
+
+                @media screen and (max-width: 991px) {
+                    width: 450px;
+                    margin: auto;
+                    text-align: center;
+                }
+
+                @media screen and (max-width: 767px) {
+                    height: 240px;
+                }
+
+                @media screen and (max-width: 575px) {
+                    width: 100%;
+                }
+
+                .hctextinfo {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -120px;
+                    opacity: 0;
+                    z-index: 0;
+                    transition: all 0.5s ease;
+
+                    @media screen and (max-width: 767px) {
+                        transform: translate(-50%, -15%);
+                        left: 50%;
+                        width: 100%;
+                    }
+
+                    h1 {
+                        font-size: 30px;
+                        margin-bottom: 30px;
+
+                        @media screen and (max-width: 767px) {
+                            font-size: 25px;
+                        }
+                    }
+
+                    p {
+                        br {
+                            @media screen and (max-width: 767px) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    button {
+                        @include buttondec();
+                        width: 120px;
+                        margin-top: 30px;
+                    }
+
+                    &.activado {
+                        right: 0px;
+                        opacity: 1;
+                        z-index: 5;
+
+                        @media screen and (max-width: 767px) {
+                            right: inherit;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,137 @@
+#contact {
+    background: $softblue;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0;
+
+    @media screen and (max-width: 575px) {
+        padding: 50px 0;
+    }
+
+    .joined {
+        font-family: map-get($font-family, light);
+        font-weight: map-get($font-weight, "600");
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 5px;
+    }
+
+    h4 {
+        font-size: 30px;
+        margin: 45px 0;
+        color: $white;
+
+        @media screen and (max-width: 767px) {
+            font-size: 25px;
+        }
+        @media screen and (max-width: 575px) {
+            margin-top: 20px;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+
+        @media screen and (max-width: 575px) {
+            flex-direction: column;
+            width: 300px;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 80%;
+        }
+
+        .wrapper {
+            position: relative;
+            width: 100%;
+            background: $white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+
+            &.full {
+                border: 2px solid $red;
+                border-radius: 5px 5px 0 0;
+            }
+
+            .input-data {
+                position: relative;
+                input {
+                    border: none;
+                    height: 100%;
+                    width: 100%;
+                    background: transparent;
+                    outline: none;
+                    color: $grayblue;
+
+                    &:focus ~ label,
+                    &:valid ~ label {
+                        transform: translateY(-30px);
+                        font-size: 14px;
+                        box-shadow: none;
+                        color: $white;
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    font-size: 14px;
+                    color: $grayblue;
+                    pointer-events: none;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            img {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .message {
+                position: absolute;
+                background: $red;
+                font-size: 10px;
+                font-family: map-get($font-family, light);
+                width: 102%;
+                padding: 5px;
+                left: -2px;
+                border-radius: 0 0 5px 5px;
+                bottom: -24px;
+                box-sizing: border-box;
+                opacity: 0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+            }
+        }
+
+        button {
+            @include buttondec();
+            background: $red;
+            margin-left: 15px;
+
+            @media screen and (max-width: 575px) {
+                margin: 0;
+                margin-top: 35px;
+                width: 100%;
+            }
+
+            &:hover {
+                color: $red;
+                border-color: $red;
+            }
+        }
+    }
+}

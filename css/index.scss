@@ -1,0 +1,153 @@
+@import url("font.css");
+
+$softblue: hsl(231, 69%, 60%);
+$red: hsl(0, 94%, 66%);
+$grayblue: hsl(229, 8%, 60%);
+$darkblue: hsl(229, 31%, 21%);
+$white: #ffffff;
+
+$font-family: (
+    "bold": "rubik-bold",
+    "regular": "rubik-regular",
+    "light": "rubik-light",
+    "medium": "rubik-medium",
+);
+
+$font-weight: (
+    "400": 400,
+    "500": 500,
+    "600": 600,
+);
+
+* p,
+* h1,
+* h2,
+* h3,
+* h4 {
+    margin: 0;
+}
+
+* h1,
+* h2,
+* h3,
+* h4 {
+    color: $darkblue;
+}
+
+* p {
+    color: $grayblue;
+    line-height: 28px;
+}
+
+* ul,
+* li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+* a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+* button:focus {
+    outline: none;
+}
+
+@mixin buttondec {
+    border: 2px solid;
+    border-color: $softblue;
+    width: 165px;
+    padding: 15px 0;
+    border-radius: 5px;
+    background: $softblue;
+    color: $white;
+    font-family: map-get($font-family, medium);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px -3px transparent;
+
+    &:hover {
+        background: $white;
+        color: $softblue;
+        box-shadow: 2px 2px 10px -3px $softblue;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-family: map-get($font-family, regular);
+    // max-width: 1440px;
+    // margin: auto auto;
+    font-size: 18px;
+
+    @media screen and (max-width: 767px) {
+        font-size: 16px;
+    }
+}
+
+.container {
+    box-sizing: border-box;
+    position: relative;
+    //max-width: 1320px;
+    max-width: 1130px;
+    margin: auto auto;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1400px) {
+        //max-width: 1140px;
+        max-width: 1130px;
+    }
+
+    @media screen and (max-width: 1199px) {
+        max-width: 960px;
+    }
+
+    @media screen and (max-width: 991px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 767px) {
+        max-width: 540px;
+    }
+
+    @media screen and (max-width: 575px) {
+        //max-width: 100%;
+        max-width: 375px;
+        padding: 0 15px;
+    }
+    @media screen and (max-width: 400px) {
+        max-width: 100%;
+    }
+}
+
+.d-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+@import "nav";
+
+/**************header**************/
+@import "header";
+
+/**************features**************/
+@import "features";
+
+/**************extensions**************/
+@import "extension";
+
+/**************questions**************/
+@import "question";
+
+/**************contact**************/
+@import "contact";
+
+
+@import "footer";

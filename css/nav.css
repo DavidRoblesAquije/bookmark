@@ -1,0 +1,19 @@
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 40px 0;
+}
+
+nav .navContent ul {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+  width: 100%;
+  justify-items: end;
+}
+/*# sourceMappingURL=nav.css.map */
